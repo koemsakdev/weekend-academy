@@ -1,27 +1,27 @@
-import {Monaco} from "@monaco-editor/react";
+import { Monaco } from "@monaco-editor/react";
 import type { editor as MonacoEditor } from "monaco-editor";
-import {Theme} from "@/types";
+import { Theme } from "@/types";
 
 type LanguageConfig = Record<
-    string,
-    {
-        id: string;
-        label: string;
-        logoPath: string;
-        pistonRuntime: { language: string; version: string };
-        monacoLanguage: string;
-        defaultCode: string;
-    }
+  string,
+  {
+    id: string;
+    label: string;
+    logoPath: string;
+    pistonRuntime: { language: string; version: string };
+    monacoLanguage: string;
+    defaultCode: string;
+  }
 >;
 
 export const LANGUAGE_CONFIG: LanguageConfig = {
-    javascript: {
-        id: "javascript",
-        label: "JavaScript",
-        logoPath: "/javascript.png",
-        pistonRuntime: {language: "javascript", version: "18.15.0"}, // api that we're going to be using
-        monacoLanguage: "javascript",
-        defaultCode: `// JavaScript Playground
+  javascript: {
+    id: "javascript",
+    label: "JavaScript",
+    logoPath: "/javascript.png",
+    pistonRuntime: { language: "javascript", version: "18.15.0" }, // api that we're going to be using
+    monacoLanguage: "javascript",
+    defaultCode: `// JavaScript Playground
 const numbers = [1, 2, 3, 4, 5];
 
 // Map numbers to their squares
@@ -36,14 +36,14 @@ console.log('Even numbers:', evenNumbers);
 // Calculate sum using reduce
 const sum = numbers.reduce((acc, curr) => acc + curr, 0);
 console.log('Sum of numbers:', sum);`,
-    },
-    typescript: {
-        id: "typescript",
-        label: "TypeScript",
-        logoPath: "/typescript.png",
-        pistonRuntime: {language: "typescript", version: "5.0.3"},
-        monacoLanguage: "typescript",
-        defaultCode: `// TypeScript Playground
+  },
+  typescript: {
+    id: "typescript",
+    label: "TypeScript",
+    logoPath: "/typescript.png",
+    pistonRuntime: { language: "typescript", version: "5.0.3" },
+    monacoLanguage: "typescript",
+    defaultCode: `// TypeScript Playground
 interface NumberArray {
   numbers: number[];
   sum(): number;
@@ -73,14 +73,14 @@ console.log('Original numbers:', math.numbers);
 console.log('Squared numbers:', math.squares());
 console.log('Even numbers:', math.evenNumbers());
 console.log('Sum of numbers:', math.sum());`,
-    },
-    python: {
-        id: "python",
-        label: "Python",
-        logoPath: "/python.png",
-        pistonRuntime: {language: "python", version: "3.10.0"},
-        monacoLanguage: "python",
-        defaultCode: `# Python Playground
+  },
+  python: {
+    id: "python",
+    label: "Python",
+    logoPath: "/python.png",
+    pistonRuntime: { language: "python", version: "3.10.0" },
+    monacoLanguage: "python",
+    defaultCode: `# Python Playground
 numbers = [1, 2, 3, 4, 5]
 
 # Map numbers to their squares
@@ -95,14 +95,14 @@ print(f"Even numbers: {even_numbers}")
 # Calculate sum
 numbers_sum = sum(numbers)
 print(f"Sum of numbers: {numbers_sum}")`,
-    },
-    java: {
-        id: "java",
-        label: "Java",
-        logoPath: "/java.png",
-        pistonRuntime: {language: "java", version: "15.0.2"},
-        monacoLanguage: "java",
-        defaultCode: `public class Main {
+  },
+  java: {
+    id: "java",
+    label: "Java",
+    logoPath: "/java.png",
+    pistonRuntime: { language: "java", version: "15.0.2" },
+    monacoLanguage: "java",
+    defaultCode: `public class Main {
   public static void main(String[] args) {
       // Create array
       int[] numbers = {1, 2, 3, 4, 5};
@@ -137,14 +137,14 @@ print(f"Sum of numbers: {numbers_sum}")`,
       System.out.println();
   }
 }`,
-    },
-    go: {
-        id: "go",
-        label: "Go",
-        logoPath: "/go.png",
-        pistonRuntime: {language: "go", version: "1.16.2"},
-        monacoLanguage: "go",
-        defaultCode: `package main
+  },
+  go: {
+    id: "go",
+    label: "Go",
+    logoPath: "/go.png",
+    pistonRuntime: { language: "go", version: "1.16.2" },
+    monacoLanguage: "go",
+    defaultCode: `package main
 
 import "fmt"
 
@@ -178,14 +178,14 @@ func main() {
   }
   fmt.Println("Sum of numbers:", sum)
 }`,
-    },
-    rust: {
-        id: "rust",
-        label: "Rust",
-        logoPath: "/rust.png",
-        pistonRuntime: {language: "rust", version: "1.68.2"},
-        monacoLanguage: "rust",
-        defaultCode: `fn main() {
+  },
+  rust: {
+    id: "rust",
+    label: "Rust",
+    logoPath: "/rust.png",
+    pistonRuntime: { language: "rust", version: "1.68.2" },
+    monacoLanguage: "rust",
+    defaultCode: `fn main() {
     // Create vector
     let numbers = vec![1, 2, 3, 4, 5];
     
@@ -211,14 +211,14 @@ func main() {
     let sum: i32 = numbers.iter().sum();
     println!("Sum of numbers: {}", sum);
 }`,
-    },
-    csharp: {
-        id: "csharp",
-        label: "C#",
-        logoPath: "/csharp.png",
-        pistonRuntime: {language: "csharp", version: "6.12.0"},
-        monacoLanguage: "csharp",
-        defaultCode: `using System;
+  },
+  csharp: {
+    id: "csharp",
+    label: "C#",
+    logoPath: "/csharp.png",
+    pistonRuntime: { language: "csharp", version: "6.12.0" },
+    monacoLanguage: "csharp",
+    defaultCode: `using System;
 using System.Linq;
 
 class Program {
@@ -242,14 +242,14 @@ class Program {
         Console.WriteLine($"Sum of numbers: {sum}");
     }
 }`,
-    },
-    ruby: {
-        id: "ruby",
-        label: "Ruby",
-        logoPath: "/ruby.png",
-        pistonRuntime: {language: "ruby", version: "3.0.1"},
-        monacoLanguage: "ruby",
-        defaultCode: `# Create array
+  },
+  ruby: {
+    id: "ruby",
+    label: "Ruby",
+    logoPath: "/ruby.png",
+    pistonRuntime: { language: "ruby", version: "3.0.1" },
+    monacoLanguage: "ruby",
+    defaultCode: `# Create array
 numbers = [1, 2, 3, 4, 5]
 
 # Print original numbers
@@ -266,14 +266,14 @@ puts "Even numbers: #{even_numbers.join(' ')}"
 # Calculate sum
 sum = numbers.sum
 puts "Sum of numbers: #{sum}"`,
-    },
-    swift: {
-        id: "swift",
-        label: "Swift",
-        logoPath: "/swift.png",
-        pistonRuntime: {language: "swift", version: "5.3.3"},
-        monacoLanguage: "swift",
-        defaultCode: `// Create array
+  },
+  swift: {
+    id: "swift",
+    label: "Swift",
+    logoPath: "/swift.png",
+    pistonRuntime: { language: "swift", version: "5.3.3" },
+    monacoLanguage: "swift",
+    defaultCode: `// Create array
 let numbers = [1, 2, 3, 4, 5]
 
 // Print original numbers
@@ -290,111 +290,133 @@ print("Even numbers: \\(evenNumbers)")
 // Calculate sum
 let sum = numbers.reduce(0, +)
 print("Sum of numbers: \\(sum)")`,
-    },
-    powershell: {
-        id: "powershell",
-        label: "Terminal",
-        logoPath: "/powershell.png",
-        pistonRuntime: {language: "powershell", version: "7.1.4"},
-        monacoLanguage: "powershell",
-        defaultCode: ``
-    }
+  },
+  terminal: {
+    id: "terminal",
+    label: "Terminal",
+    logoPath: "/terminal.png",
+    pistonRuntime: { language: "bash", version: "5.1.4" },
+    monacoLanguage: "shell",
+    defaultCode: ``,
+  },
 };
 
 export const THEMES: Theme[] = [
-    {id: "vs-dark", label: "VS Dark", color: "#1e1e1e"},
-    {id: "vs-light", label: "VS Light", color: "#ffffff"},
-    {id: "github-dark", label: "GitHub Dark", color: "#0d1117"},
-    {id: "monokai", label: "Monokai", color: "#272822"},
-    {id: "solarized-dark", label: "Solarized Dark", color: "#002b36"}
+  { id: "vs-dark", label: "VS Dark", color: "#1e1e1e" },
+  { id: "vs-light", label: "VS Light", color: "#ffffff" },
+  { id: "github-dark", label: "GitHub Dark", color: "#0d1117" },
+  { id: "monokai", label: "Monokai", color: "#272822" },
+  { id: "solarized-dark", label: "Solarized Dark", color: "#002b36" },
+  { id: "terminal", label: "Terminal", color: "#282c34" },
 ];
 
-export const THEME_DEFINITIONS: Record<string, { base: MonacoEditor.BuiltinTheme; inherit: boolean; rules: { token: string; foreground: string }[]; colors: Record<string, string> }> = {
-    "github-dark": {
-        base: "vs-dark",
-        inherit: true,
-        rules: [
-            {token: "comment", foreground: "6e7681"},
-            {token: "string", foreground: "a5d6ff"},
-            {token: "keyword", foreground: "ff7b72"},
-            {token: "number", foreground: "79c0ff"},
-            {token: "type", foreground: "ffa657"},
-            {token: "class", foreground: "ffa657"},
-            {token: "function", foreground: "d2a8ff"},
-            {token: "variable", foreground: "ffa657"},
-            {token: "operator", foreground: "ff7b72"},
-        ],
-        colors: {
-            "editor.background": "#0d1117",
-            "editor.foreground": "#c9d1d9",
-            "editor.lineHighlightBackground": "#161b22",
-            "editorLineNumber.foreground": "#6e7681",
-            "editorIndentGuide.background": "#21262d",
-            "editor.selectionBackground": "#264f78",
-            "editor.inactiveSelectionBackground": "#264f7855",
-        },
+export const THEME_DEFINITIONS: Record<
+  string,
+  {
+    base: MonacoEditor.BuiltinTheme;
+    inherit: boolean;
+    rules: { token: string; foreground: string }[];
+    colors: Record<string, string>;
+  }
+> = {
+  "github-dark": {
+    base: "vs-dark",
+    inherit: true,
+    rules: [
+      { token: "comment", foreground: "6e7681" },
+      { token: "string", foreground: "a5d6ff" },
+      { token: "keyword", foreground: "ff7b72" },
+      { token: "number", foreground: "79c0ff" },
+      { token: "type", foreground: "ffa657" },
+      { token: "class", foreground: "ffa657" },
+      { token: "function", foreground: "d2a8ff" },
+      { token: "variable", foreground: "ffa657" },
+      { token: "operator", foreground: "ff7b72" },
+    ],
+    colors: {
+      "editor.background": "#0d1117",
+      "editor.foreground": "#c9d1d9",
+      "editor.lineHighlightBackground": "#161b22",
+      "editorLineNumber.foreground": "#6e7681",
+      "editorIndentGuide.background": "#21262d",
+      "editor.selectionBackground": "#264f78",
+      "editor.inactiveSelectionBackground": "#264f7855",
     },
-    monokai: {
-        base: "vs-dark",
-        inherit: true,
-        rules: [
-            {token: "comment", foreground: "75715E"},
-            {token: "string", foreground: "E6DB74"},
-            {token: "keyword", foreground: "F92672"},
-            {token: "number", foreground: "AE81FF"},
-            {token: "type", foreground: "66D9EF"},
-            {token: "class", foreground: "A6E22E"},
-            {token: "function", foreground: "A6E22E"},
-            {token: "variable", foreground: "F8F8F2"},
-            {token: "operator", foreground: "F92672"},
-        ],
-        colors: {
-            "editor.background": "#272822",
-            "editor.foreground": "#F8F8F2",
-            "editorLineNumber.foreground": "#75715E",
-            "editor.selectionBackground": "#49483E",
-            "editor.lineHighlightBackground": "#3E3D32",
-            "editorCursor.foreground": "#F8F8F2",
-            "editor.selectionHighlightBackground": "#49483E",
-        },
+  },
+  monokai: {
+    base: "vs-dark",
+    inherit: true,
+    rules: [
+      { token: "comment", foreground: "75715E" },
+      { token: "string", foreground: "E6DB74" },
+      { token: "keyword", foreground: "F92672" },
+      { token: "number", foreground: "AE81FF" },
+      { token: "type", foreground: "66D9EF" },
+      { token: "class", foreground: "A6E22E" },
+      { token: "function", foreground: "A6E22E" },
+      { token: "variable", foreground: "F8F8F2" },
+      { token: "operator", foreground: "F92672" },
+    ],
+    colors: {
+      "editor.background": "#272822",
+      "editor.foreground": "#F8F8F2",
+      "editorLineNumber.foreground": "#75715E",
+      "editor.selectionBackground": "#49483E",
+      "editor.lineHighlightBackground": "#3E3D32",
+      "editorCursor.foreground": "#F8F8F2",
+      "editor.selectionHighlightBackground": "#49483E",
     },
-    "solarized-dark": {
-        base: "vs-dark",
-        inherit: true,
-        rules: [
-            {token: "comment", foreground: "586e75"},
-            {token: "string", foreground: "2aa198"},
-            {token: "keyword", foreground: "859900"},
-            {token: "number", foreground: "d33682"},
-            {token: "type", foreground: "b58900"},
-            {token: "class", foreground: "b58900"},
-            {token: "function", foreground: "268bd2"},
-            {token: "variable", foreground: "b58900"},
-            {token: "operator", foreground: "859900"},
-        ],
-        colors: {
-            "editor.background": "#002b36",
-            "editor.foreground": "#839496",
-            "editorLineNumber.foreground": "#586e75",
-            "editor.selectionBackground": "#073642",
-            "editor.lineHighlightBackground": "#073642",
-            "editorCursor.foreground": "#839496",
-            "editor.selectionHighlightBackground": "#073642",
-        },
+  },
+  "solarized-dark": {
+    base: "vs-dark",
+    inherit: true,
+    rules: [
+      { token: "comment", foreground: "586e75" },
+      { token: "string", foreground: "2aa198" },
+      { token: "keyword", foreground: "859900" },
+      { token: "number", foreground: "d33682" },
+      { token: "type", foreground: "b58900" },
+      { token: "class", foreground: "b58900" },
+      { token: "function", foreground: "268bd2" },
+      { token: "variable", foreground: "b58900" },
+      { token: "operator", foreground: "859900" },
+    ],
+    colors: {
+      "editor.background": "#002b36",
+      "editor.foreground": "#839496",
+      "editorLineNumber.foreground": "#586e75",
+      "editor.selectionBackground": "#073642",
+      "editor.lineHighlightBackground": "#073642",
+      "editorCursor.foreground": "#839496",
+      "editor.selectionHighlightBackground": "#073642",
     },
+  },
+  terminal: {
+    base: "vs-dark",
+    inherit: true,
+    rules: [],
+    colors: {
+      "editor.background": "#282c34",
+      "editor.foreground": "#dcdcdc",
+      "editorCursor.foreground": "#dcdcdc",
+      "editor.lineHighlightBackground": "#323842",
+      "editorLineNumber.foreground": "#5c6370",
+      "editor.selectionBackground": "#4a505b",
+    },
+  },
 };
 
 // Helper function to define themes in Monaco
 export const defineMonacoThemes = (monaco: Monaco) => {
-    Object.entries(THEME_DEFINITIONS).forEach(([themeName, themeData]) => {
-        monaco.editor.defineTheme(themeName, {
-            base: themeData.base,
-            inherit: themeData.inherit,
-            rules: themeData.rules.map((rule) => ({
-                ...rule,
-                foreground: rule.foreground,
-            })),
-            colors: themeData.colors,
-        });
+  Object.entries(THEME_DEFINITIONS).forEach(([themeName, themeData]) => {
+    monaco.editor.defineTheme(themeName, {
+      base: themeData.base,
+      inherit: themeData.inherit,
+      rules: themeData.rules.map((rule) => ({
+        ...rule,
+        foreground: rule.foreground,
+      })),
+      colors: themeData.colors,
     });
+  });
 };

@@ -130,10 +130,6 @@
     }
 }
 
-/*code {*/
-/*    background-color: #e2e6e9;*/
-/*    color: #343434 !important;*/
-/*    padding: 3px 8px;*/
-/*    border-radius: 0.25em;*/
-/*}*/
-
+.monaco-editor .cursor {
+  opacity: 0 !important;
+}

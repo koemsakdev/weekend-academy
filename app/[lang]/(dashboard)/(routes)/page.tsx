@@ -1,78 +1,66 @@
 "use client";
-import EditorPanel from "@/app/(root)/_components/EditorPanel";
-import {useDictionary} from "@/lib/dictionary-context";
-import ReactMarkdown from "react-markdown";
+import { Section } from "@/components/section";
+import CodeSnippet from "@/components/code-snippet";
+import { useDictionary } from "@/lib/dictionary-context";
+import { calCulateSumOfJavaScript, firstPython } from "@/store/codeSnippet";
+import OutputPanel from "@/components/output-pannel";
 
 const PYTHON_DOWNLOADS_URL = "https://www.python.org/downloads";
 
-type ListItemProps = {
-    content: string;
-    isFirstItem?: boolean;
-};
-
-const ListItem = ({ content, isFirstItem = false }: ListItemProps) => {
-    return (
-        <li>
-            <div className={"flex items-center gap-1.5"}>
-                <ReactMarkdown>{content}</ReactMarkdown>
-                {isFirstItem && (
-                    <a
-                        href={PYTHON_DOWNLOADS_URL}
-                        target="_blank"
-                        className="text-blue-500"
-                    >
-                        {PYTHON_DOWNLOADS_URL}
-                    </a>
-                )}
-            </div>
-        </li>
-    );
-};
-
-
 export default function Home() {
-    const {dict} = useDictionary();
-    return (
-        <div className={"w-full h-full flex flex-col gap-1.5"}>
-            <h1 className={"text-2xl font-semibold"}>
-                {dict.contents["python.overview"].title[0]}
-            </h1>
+  const { dict } = useDictionary();
+  const overview = dict.contents["python.overview"];
 
-            <ReactMarkdown>
-                {dict.contents["python.overview"].description[0]}
-            </ReactMarkdown>
+  return (
+    <div className="w-full h-full flex flex-col gap-3">
+      <h1 className="text-2xl font-semibold">{overview.title[0]}</h1>
 
-            <h2 className={"text-xl font-semibold"}>
-                {dict.contents["python.overview"].title[1]}
-            </h2>
+      <Section content={overview.description[0]} />
+      <Section title={overview.title[1]} content={overview.description[1]} />
+      <Section
+        title={overview.title[2]}
+        content={overview.description[2]}
+        type="list"
+        downloadUrl={PYTHON_DOWNLOADS_URL}
+      />
+      <Section
+        title={overview.title[3]}
+        content={overview.description[3]}
+        type="text"
+      />
 
-            <ReactMarkdown>
-                {dict.contents["python.overview"].description[1]}
-            </ReactMarkdown>
+      <div className="grid grid-cols-1 gap-4">
+        <CodeSnippet
+          isShell={true}
+          showLineNumbers={false}
+          editorValue={`python --version`}
+          language="terminal"
+          mode="vs-dark"
+        />
+      </div>
+      <Section title={overview.title[4]} content={overview.description[4]} />
+      <div className="grid grid-cols-1 gap-4">
+        <CodeSnippet
+          isShell={false}
+          showLineNumbers={true}
+          editorValue={firstPython}
+          language="python"
+          mode="vs-dark"
+        />
+      </div>
 
-            <h2 className={"text-xl font-semibold"}>
-                {dict.contents["python.overview"].title[2]}
-            </h2>
+      <h2>Tesing JavaScript Code</h2>
+      <div className="grid grid-cols-1 gap-4">
+        <CodeSnippet
+          isShell={false}
+          showLineNumbers={true}
+          editorValue={calCulateSumOfJavaScript}
+          language="javascript"
+          mode="vs-dark"
+        />
 
-            <ul className="list-disc ml-12">
-                {dict.contents["python.overview"].description[2].map((item: string, index: number) => (
-                    <ListItem
-                        key={item}
-                        content={item}
-                        isFirstItem={index === 0}
-                    />
-                ))}
-            </ul>
-
-            <h2 className={"text-xl font-semibold"}>
-                {dict.contents["python.overview"].title[3]}
-            </h2>
-            <p className="text-base">
-                {dict.contents["python.overview"].description[3]}
-            </p>
-            <div className="grid grid-cols-1 gap-4">
-                <EditorPanel />
-            </div>
-        </div>
-    );
+        <OutputPanel />
+      </div>
+    </div>
+  );
 }
