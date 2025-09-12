@@ -1,0 +1,39 @@
+{
+    "sidebar": {
+        "title": "ការសិក្សាចុងសប្ដាហ៍",
+        "version": "ជំនាន់ទី ១.០.០",
+        "search_placeholder": "ស្វែងរក",
+        "python": "Python",
+        "python.overview": "និយមន័យទូទៅ",
+        "python.variable": "អថេរ",
+        "python.data-type": "ប្រភេទទិន្នន័យ",
+        "python.operator": "សញ្ញា",
+        "python.input-output": "បញ្ចូល & លទ្ធផល",
+        "python.control-flow": "ការគ្រប់គ្រង",
+        "python.loop": "រង្វិលជុំ",
+        "python.function": "ទម្រង់មុខងារ",
+        "python.exercise": "សំណួរ"
+    },
+    "contents": {
+        "python.overview": {
+            "title": [
+                "I. តើអ្វីទៅជា Python?",
+                "II. កន្ទុយឯកសារ Python",
+                "III. របៀបដំឡើង Python",
+                "IV. របៀបពិនិត្យថាតើ Python បានដំឡើងរួចឬនៅ",
+                "V. កម្មវិធី Python ដំបូង"
+            ],
+            "description": [
+                "Python គឺជាភាសាកុំព្យូទ័រកម្រិតខ្ពស់ ដែលត្រូវបានបង្កើតឡើងដោយ Guido van Rossum នៅឆ្នាំ 1991។ វាសាមញ្ញ ងាយស្រួលអាន ហើយអាចប្រើបានក្នុងវិស័យជាច្រើនដូចជា កម្មវិធីគេហទំព័រ វិទ្យាសាស្ត្រទិន្នន័យ បញ្ញាសិប្បនិម្មិត ការស្វ័យប្រវត្តិកម្ម និងហ្គេម។",
+                "ឯកសារ Python ប្រើកន្ទុយ `.py`។ ឧទាហរណ៍៖ `hello.py`។",
+                [
+                    "ចូលទៅកាន់",
+                    "ទាញយក និងដំឡើងជំនាន់ចុងក្រោយ។",
+                    "លើ Windows ត្រូវ ចុចធីក `Add Python to PATH` មុនពេលដំឡើង។"
+                ],
+                "បើក Command Prompt (Windows) ឬ Terminal (Mac/Linux) ហើយវាយពាក្យ៖",
+                "បង្កើតឯកសារឈ្មោះ `hello.py`។ ឧទាហរណ៍៖"
+            ]
+        }
+    }
+}

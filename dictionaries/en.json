@@ -1,0 +1,39 @@
+{
+    "sidebar": {
+        "title": "Weekend Academy",
+        "version": "Version 1.0.0",
+        "search_placeholder": "Search",
+        "python": "Python",
+        "python.overview": "Overview",
+        "python.variable": "Variable",
+        "python.data-type": "Data Type",
+        "python.operator": "Operator",
+        "python.input-output": "Input & Output",
+        "python.control-flow": "Control Flow",
+        "python.loop": "Loop",
+        "python.function": "Function",
+        "python.exercise": "Exercise"
+    },
+    "contents": {
+        "python.overview": {
+            "title": [
+                "I. What is Python?",
+                "II. Python File Extension",
+                "III. How to Install Python",
+                "IV. How to Check if Python is Installed",
+                "V. First Python Program"
+            ],
+            "description": [
+                "Python is a high-level programming language created by Guido van Rossum in 1991. It is simple, easy to read, and can be used in many areas like web apps, data science, AI, automation, and games.",
+                "Python files use the extension `.py`. Example: `hello.py`.",
+                [
+                    "Visit",
+                    "Download and install the latest version.",
+                    "On Windows, check `Add Python to PATH` before installing."
+                ],
+                "Open Command Prompt (Windows) or Terminal (Mac/Linux) and type:",
+                "Create a file named `hello.py.` as below example."
+            ]
+        }
+    }
+}
