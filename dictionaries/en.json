@@ -21,7 +21,8 @@
                 "II. Python File Extension",
                 "III. How to Install Python",
                 "IV. How to Check if Python is Installed",
-                "V. First Python Program"
+                "V. First Python Program",
+                "VI. Python Comments"
             ],
             "description": [
                 "Python is a high-level programming language created by Guido van Rossum in 1991. It is simple, easy to read, and can be used in many areas like web apps, data science, AI, automation, and games.",
@@ -32,7 +33,40 @@
                     "On Windows, check `Add Python to PATH` before installing."
                 ],
                 "Open Command Prompt (Windows) or Terminal (Mac/Linux) and type:",
-                "Create a file named `hello.py.` as below example."
+                "Create a file named `hello.py.` as below example.",
+                [
+                    "Comments in Python are lines in the code that are ignored by the Python interpreter. They are used to explain code, make it easier to read, or temporarily disable code during debugging.",
+                    "**Single-line comment** → starts with `#`",
+                    "**Multi-line comment (by convention) → use multiple** `#` lines or triple quotes lines or triple quotes `\"\"\" ... \"\"\"`(though triple quotes are actually multi-line strings, often used as docstrings)."
+                ]
+            ]
+        },
+        "python.variable": {
+            "title": [
+                "I. What is a Variable?",
+                "II. Creating Variables",
+                "III. Variable Naming Rules",
+                "IV. Assigning Multiple Values To a Variable",
+                "V. Global and Local Variables"
+            ],
+            "description": [
+                "A variable is a container for storing data values. In Python, you don't need to declare the data type before using a variable because Python is a dynamically typed language. The interpreter automatically determines the data type of the variable based on the value you assign to it.",
+                "To create a variable, you simply assign a value to a name using the equals sign (`=`). You can also change the value of a variable later, even if the new value has a different data type.",
+                [
+                    "A variable name can be short like `x` or `y`, or more descriptive like `total_volume` or `car_name`. The rules for Python variables are:",
+                    [
+                        "A variable name must start with a letter or the underscore character.",
+                        "A variable name cannot start with a number.",
+                        "A variable name can only contain alpha-numeric characters (A-z, 0-9) and underscores (`_`).",
+                        "Variable names are case-sensitive (`age`, `Age`, and `AGE` are three different variables)."
+                    ]
+                ],
+                "Python allows you to assign values to multiple variables in one line. This is often used for unpacking collections or for concise variable initialization.",
+                [
+                    "A **local variable** is one that is defined inside a function and can only be used within that function. A **global variable** is defined outside any function and can be used by anyone, both inside and outside functions.",
+                    "**Example of a local variable**:",
+                    "**Example of a global variable**:"
+                ]
             ]
         }
     }

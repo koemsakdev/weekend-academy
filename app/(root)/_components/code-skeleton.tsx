@@ -1,4 +1,4 @@
-const RunningCodeSkeleton = () => (
+const CodeSkeleton = () => (
   <div className="space-y-4 animate-pulse">
     <div className="space-y-2">
       <div className="h-4 bg-gray-800/50 rounded w-3/4" />
@@ -8,4 +8,4 @@ const RunningCodeSkeleton = () => (
   </div>
 );
 
-export default RunningCodeSkeleton;
+export default CodeSkeleton;
