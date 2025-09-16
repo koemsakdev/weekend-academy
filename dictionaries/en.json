@@ -68,6 +68,216 @@
                     "**Example of a global variable**:"
                 ]
             ]
+        },
+        "python.data-type": {
+            "title": [
+                "I. Python Data Types",
+                "II. Python Numeric Data type",
+                [
+                    "III. Python List Data Type",
+                    "Creating a List",
+                    "Accessing List Items",
+                    "Change List Items",
+                    "Add List Items",
+                    "Remove List Items",
+                    "Loop Lists"
+                ],
+                "IV. Python Tuple Data Type",
+                "V. Python String Data Type",
+                "VI. Python Set Data Type",
+                "VII. Python Dictionary Data Type"
+            ],
+            "description": [
+                [
+                    "Python Data Types are used to classify and categorize different types of data, such as numbers, text, or true/false values. This classification is crucial for developers to manage data effectively, as it determines the operations that can be performed on a particular data item. In computer programming, data types specify the type of data that can be stored inside a variable. For example:",
+                    "Here, **24** (an integer) is assigned to the `num` variable. So the data type of `num` is of the `int` class.",
+                    [
+                        {
+                            "type": "Numeric",
+                            "class": "`int`, `float`, `complex`",
+                            "description": "holds numeric values"
+                        },
+                        {
+                            "type": "String",
+                            "class": "`str`",
+                            "description": "holds sequence of characters"
+                        },
+                        {
+                            "type": "Sequence",
+                            "class": "`list`, `tuple`, `range`",
+                            "description": "holds collection of items"
+                        },
+                        {
+                            "type": "Mapping",
+                            "class": "`dict`",
+                            "description": "holds data in key-value pair form"
+                        },
+                        {
+                            "type": "Boolean",
+                            "class": "`bool`",
+                            "description": "holds either `True` or `False`"
+                        },
+                        {
+                            "type": "Set",
+                            "class": "`set`, `frozenset`",
+                            "description": "hold collection of unique items"
+                        }
+                    ],
+                    "Since everything is an object in Python programming, data types are actually classes and variables are instances(object) of these classes."
+                ],
+                [
+                    "In Python, numeric data type is used to hold numeric values. Integers, floating-point numbers and complex numbers fall under Python numbers category. They are defined as `int`, `float` and `complex` classes in Python.",
+                    [
+                        "`int` - holds signed integers of non-limited length.",
+                        "`float` - holds floating decimal points and it's accurate up to 15 decimal places.",
+                        "`complex` - holds complex numbers."
+                    ],
+                    "We can use the `type()` function to know which class a variable or a value belongs to. Let's see an example:",
+                    "In the above example, we have created three variables named `num1`, `num2` and `num3` with values **5**, **5.0**, and `1+2j` respectively.",
+                    "We have also used the `type()` function to know which class a certain variable belongs to. Since:",
+                    [
+                        "**5** is an integer value, `type()` returns `int` as the class of `num1` i.e `<class 'int'>`",
+                        "**2.0** is a floating value, `type()` returns `float` as the class of `num2` i.e `<class 'float'>`",
+                        "`1 + 2j` is a complex number, `type()` returns `complex` as the class of `num3` i.e `<class 'complex'>`"
+                    ]
+                ],
+                [
+                    [
+                        "In Python, a list is a built-in data structure that can hold an ordered collection of items. Unlike arrays in some languages, Python lists are very flexible:",
+                        [
+                            "Can contain duplicate items",
+                            "**Mutable**: items can be modified, replaced, or removed",
+                            "**Ordered**: elements maintain the order in which they were added",
+                            "**Index-based**: items are accessed using their position (starting from 0)",
+                            "Index-based: items are accessed using their position (starting from 0)"
+                        ]
+                    ],
+                    [
+                        "Lists can be created in several ways, such as using square brackets, the list() constructor or by repeating elements. Let's look at each method one by one with example.",
+                        [
+                            "**1. Using Square Brackets**",
+                            "We use square brackets `[]` to create a list directly.",
+                            "**Example**: Creating lists with **integers**, **strings**, and **mixed data types**."
+                        ],
+                        [
+                            "**2. Using the `list()` Constructor**",
+                            "We can also create a list by passing an iterable (like a `tuple`, `string` or another list) to the `list()` function",
+                            "**Example**: Creating a list from `tuple` and `string`"
+                        ],
+                        [
+                            "**3. Creating List with Repeated Elements**",
+                            "We can use the multiplication operator * to create a list with repeated items.",
+                            "**Example**: Creating lists with repeated values."
+                        ]
+                    ],
+                    [
+                        "Elements in a list are accessed using indexing. Python indexes start at `0`, so `a[0]` gives the first element. Negative indexes allow access from the end (e.g., `-1` gives the last element).",
+                        [
+                            "**Positive Indexing**",
+                            "Items in a list are indexed starting from `0` for the first item. You can access any item by placing its index inside square brackets `[]` after the list name."
+                        ],
+                        [
+                            "**Negative Indexing**",
+                            "You can also access items from the end of the list using negative indexes. The last item is at index `-1`, the second to last is at `-2`, and so on. This is a convenient way to get items from the end without knowing the list's length."
+                        ],
+                        [
+                            "**Slicing (Range of Indexes)**",
+                            "Slicing allows you to get a new list containing a range of items from an existing one. The syntax is `[start:end]`. The slice includes the `start` index but excludes the `end` index.",
+                            [
+                                "**Basic Slicing:**",
+                                "**Slicing from the beginning:** Omit the start index to start from the first item.",
+                                "**Slicing to the end:** Omit the end index to go to the last item."
+                            ]
+                        ],
+                        [
+                            "**Range of Negative Indexes**",
+                            "You can combine slicing with negative indexes to select a range of items from the end of the list. The same rules apply: the `start` index is inclusive, and the `end` index is exclusive."
+                        ],
+                        [
+                            "**Check if Item Exists**",
+                            "Use the `in` keyword to check for the presence of an item in a list. This returns a Boolean value (`True` or `False`). This is a fast and readable way to test for membership."
+                        ]
+                    ],
+                    [
+                        [
+                            "**Change Item Value**",
+                            "You can change the value of a specific item in a list by referring to its index and assigning it a new value."
+                        ],
+                        [
+                            "**Change a Range of Item Values**",
+                            "You can change a range of list items by specifying a slice and assigning a new iterable (like another list) to it. The number of new items doesn't have to match the number of items being replaced."
+                        ],
+                        [
+                            "**Insert Items**",
+                            "To insert a new item into a list without replacing any existing items, use the `insert()` method. The first argument is the index where you want to insert the item, and the second is the item's value.",
+                            "The `insert()` method adds `'kiwi'` at index 1, shifting the original items (`'banana'` and `'cherry'`) to the right."
+                        ]
+                    ],
+                    [
+                        [
+                            "**Append Items**",
+                            "The `append()` method adds a single item to the **end** of a list. This is the most common way to add an element to a list.",
+                            "The new item, `'orange'`, is added at the end of the fruits list."
+                        ],
+                        [
+                            "**Insert Items**",
+                            "The `insert()` method adds an item at a **specified index** in the list. This shifts all subsequent items to the right to make space for the new item. It takes two arguments: the index and the item to be inserted.",
+                            "`'kiwi'` is inserted at index `1`, moving `'banana'` and `'cherry'` to indexes `2` and `3`, respectively."
+                        ],
+                        [
+                            "**Extend List**",
+                            "The `extend()` method adds all the items from another iterable (like another list, tuple, or set) to the **end** of the current list. This is a more efficient way to concatenate lists than using the `+` operator.",
+                            "The `fruits` list now contains all the items from `tropical_fruits`."
+                        ],
+                        [
+                            "**Add Any Iterable**",
+                            "Both the `extend()` method and the list concatenation operator (`+`) can add elements from any iterable object, not just other lists. This includes tuples, sets, and dictionaries.",
+                            "**Example using** `extend()` **with a tuple:**",
+                            "**Example using the** `+` **operator with a list and a tuple:**",
+                            "**Note:** When using `+` to add a tuple, you must first convert the tuple to a list using `list()`. The `extend()` method automatically handles this conversion."
+                        ]
+                    ],
+                    [
+                        [
+                            "**Remove Specified Item**",
+                            "The `remove()` method removes the **first occurrence** of a specified item from the list.",
+                            "Even though 'banana' appears twice, `remove()` only deletes the first one it finds."
+                        ],
+                        [
+                            "**Remove Specified Index**",
+                            "You can remove an item at a specific position using either the `pop()` method or `del` keyword.",
+                            "`pop()` **Method:** This method removes the item at a specified index and **returns the removed item**. If you don't specify an index, it removes and returns the **last item.**",
+                            "`del` **Keyword:** This keyword removes an item at a specified index. Unlike `pop()`, it **does not return the removed item**. You can also use `del` to remove an entire slice or the whole list."
+                        ],
+                        [
+                            "**Clear the List**",
+                            "The `clear()` method empties the entire list, making it an empty list `[]`. The list object itself remains, but all its content is removed."
+                        ]
+                    ],
+                    [
+                        [
+                            "**Loop Through a List**",
+                            "The most common and Pythonic way to loop through a list is by using a `for` loop. This method directly iterates over each item in the list."
+                        ],
+                        [
+                            "**Loop Through the Index Numbers**",
+                            "You can also loop through a list by its index numbers. To do this, use the `range()` and `len()` functions together. `len()` gives you the number of items in the list, and `range()` creates a sequence of numbers from `0` to that length."
+                        ],
+                        [
+                            "**Using a While Loop**",
+                            "You can use a `while` loop to iterate through a list by manually keeping track of the index. This method is less common for simple list iteration but is useful when you need more control over the loop's progression."
+                        ],
+                        [
+                            "**Looping Using List Comprehension**",
+                            "List comprehension provides a concise and elegant way to create a new list from an existing one with a single line of code. It's often more readable and faster than traditional `for` loops for simple operations."
+                        ]
+                    ]
+                ]
+            ]
         }
+    },
+    "comming_soon": {
+        "title": "Coming Soon!",
+        "description": "We are working hard to bring you the best content possible. Stay tuned for updates!"
     }
 }

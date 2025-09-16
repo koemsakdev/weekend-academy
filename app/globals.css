@@ -124,12 +124,104 @@
     button {
         @apply cursor-pointer;
     }
+
     code {
-        @apply inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-7 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 shadow-none;
+        @apply inline-flex items-center justify-center whitespace-nowrap text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive bg-secondary text-secondary-foreground hover:bg-secondary/80 h-6.5 rounded-md gap-1.5 px-3 has-[>svg]:px-2.5 shadow-none;
         font-family: "Sora", sans-serif, "Battambang", system-ui !important;
     }
 }
 
 .monaco-editor .cursor {
-  opacity: 0 !important;
+    opacity: 0 !important;
+}
+
+
+.fade-in-up {
+    animation: fadeInUp 1.2s ease-out forwards;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.fade-in-up-delay {
+    animation: fadeInUp 1.2s ease-out forwards;
+    animation-delay: 0.5s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Add to your existing globals.css or create a new one */
+.clock-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.clock-face {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  border: 10px solid #333;
+  position: relative;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom;
+  background-color: black;
+  border-radius: 5px;
+}
+
+.second-hand {
+  width: 2px;
+  height: 40%;
+  background-color: #ff4500;
+  transform: rotate(0deg);
+  /* The transition makes the second hand move smoothly */
+  transition: transform 1s cubic-bezier(0.4, 2.5, 0.6, 1);
+}
+
+.minute-hand {
+  width: 6px;
+  height: 35%;
+  background-color: #555;
+  transform: rotate(0deg);
+}
+
+.hour-hand {
+  width: 8px;
+  height: 25%;
+  background-color: #333;
+  transform: rotate(0deg);
+}
+
+/* Center dot */
+.clock-face::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 15px;
+  height: 15px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 10;
 }

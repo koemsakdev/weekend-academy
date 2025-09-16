@@ -15,7 +15,7 @@ interface FooterSectionProps {
 
 const FOOTER_STYLES = {
     container: "py-4",
-    wrapper: "flex justify-between items-center max-w-7xl mx-auto"
+    wrapper: "flex justify-between items-center w-full mx-auto"
 } as const;
 
 export default function FooterSection({prev, next}: FooterSectionProps) {

@@ -28,7 +28,7 @@ const ListItem = ({ content, isFirstItem = false, downloadUrl }: ListItemProps) 
 
 export type SectionProps = {
   title?: string;
-  content: string | string[];
+  content?: string | string[];
   type?: "markdown" | "list" | "text";
   downloadUrl?: string; // <- pass from parent
 };
@@ -42,7 +42,7 @@ export const Section = ({ title, content, type = "markdown", downloadUrl }: Sect
     {type === "text" && <p className="text-base">{content as string}</p>}
 
     {type === "list" && (
-      <ul className="list-disc ml-12">
+      <ul className="list-disc ml-12 space-y-[2px]">
         {(content as string[]).map((item, index) => (
           <ListItem
             key={item}
