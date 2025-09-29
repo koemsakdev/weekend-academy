@@ -2,7 +2,11 @@
 
 import { useDictionary } from "@/lib/dictionary-context";
 import { useState, useEffect } from "react";
+import { Button } from "./ui/button";
+import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 export default function ComingSoon() {
+  const router = useRouter();
   const [isReady, setIsReady] = useState(false);
   const { dict } = useDictionary();
 
@@ -29,6 +33,17 @@ export default function ComingSoon() {
         >
           {dict.comming_soon.description}
         </p>
+
+        <Button
+          variant={"ghost"}
+          className={cn(
+            "mt-8 bg-blue-500 hover:bg-blue-600 text-white hover:text-white px-6 py-3 rounded-xs uppercase",
+            isReady ? "fade-in-up-delay" : ""
+          )}
+          onClick={() => router.back()}
+        >
+          {dict.comming_soon.button}
+        </Button>
       </div>
     </div>
   );

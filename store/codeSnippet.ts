@@ -243,3 +243,79 @@ export const pythonLoopListWithComprehension = `fruits = ["apple", "banana", "ch
 newlist = [x for x in fruits if "a" in x]
 print(newlist)
 # Output: ['apple', 'banana']`;
+
+// Python Tuple Data Type Example
+export const creatingTuple = `my_tuple = ("Apple", 10, 3.14)
+print(my_tuple)`;
+
+export const accessingElement = `my_tuple = ("Apple", 10, 3.14)
+print(my_tuple[0])  # Output: Apple
+print(my_tuple[1])  # Output: 10
+print(my_tuple[2])  # Output: 3.14`;
+
+export const immutabilityTuple = `my_tuple = ("Apple", 10, 3.14)
+my_tuple[1] = 20
+print(my_tuple)`;
+
+export const unpackingTuple = `my_tuple = ("Apple", 10, 3.14)
+name, count, price = my_tuple
+print(name)  # Output: Apple
+print(count)  # Output: 10
+print(price)  # Output: 3.14`;
+
+export const nestedTuple = `nested = (1, 2, (3, 4))
+print(nested[2][1])
+print(nested[0])`;
+
+export const tupleWithOneElement = `single = (5,)
+print(type(single))
+print(single)`;
+
+export const tupleOpertion = `my_tuple = (1, 2, 3, 4, 5)
+print(my_tuple * 2)
+print(my_tuple + (4, 5))`;
+
+export const tupleFunction = `nums = (2, 5, 1, 5)
+print(len(nums)) # length
+print(max(nums)) # maximum
+print(nums.count(5)) # count value`;
+
+// Python String Data Type Example
+export const creatingString = `greeting = "Hello World"
+print(greeting)`;
+
+export const accessingString = `greeting = "Hello World"
+print(greeting[0])  # Output: H
+print(greeting[1])  # Output: e
+print(greeting[2])  # Output: l
+print(greeting[3])  # Output: l
+print(greeting[4])  # Output: o`;
+
+export const slicingString = `greeting = "Hello Cambodia"
+print(greeting[6:14])`;
+
+export const concatenationString = `greeting = "Hello"
+name = "World"
+print(greeting + ", " + name)  # Output: Hello, World
+print(greeting, name)  # Output: Hello World
+print(greeting + " " + name + "!")  # Output: Hello World!`;
+
+export const lengthString = `greeting = "Hello World"
+print(len(greeting))  # Output: 11`;
+
+export const immutabilityString = `greeting = "Hello World"
+greeting[0] = "h"
+print(greeting)`;
+
+export const repetitionString = `greeting = "Hello"
+print(greeting * 3)  # Output: HelloHelloHello`;
+
+export const membershipTestString = `greeting = "Hello World"
+print("Hello" in greeting)  # Output: True
+print("World" not in greeting)  # Output: False`;
+
+export const stringFunction = `greeting = "Hello World"
+print(greeting.upper())  # Output: HELLO WORLD
+print(greeting.lower())  # Output: hello world
+print(greeting.title())  # Output: Hello World
+print(greeting.strip())  # Output: Hello World (removes leading/trailing spaces)`;

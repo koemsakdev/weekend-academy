@@ -12,7 +12,7 @@
         "python.control-flow": "Control Flow",
         "python.loop": "Loop",
         "python.function": "Function",
-        "python.exercise": "Exercise"
+        "python.quiz": "Quiz"
     },
     "contents": {
         "python.overview": {
@@ -82,9 +82,45 @@
                     "Remove List Items",
                     "Loop Lists"
                 ],
-                "IV. Python Tuple Data Type",
-                "V. Python String Data Type",
-                "VI. Python Set Data Type",
+                [
+                    "IV. Python Tuple Data Type",
+                    "1. Creating a Tuple",
+                    "2. Accessing Elements",
+                    "3. Immutability",
+                    "4. Unpacking",
+                    "5. Nested Tuple",
+                    "6. Tuple with One Element",
+                    "7. Tuple Operations",
+                    "8. Tuple Functions"
+                ],
+                [
+                    "V. Python String Data Type",
+                    "1. Creating a String",
+                    "2. Accessing by Index",
+                    "3. Slicing (Substring)",
+                    "4. Concatenation",
+                    "5. Length",
+                    "6. Immutability (Error)",
+                    "7. Repetition",
+                    "8. Membership Test",
+                    "9. String Functions"
+                ],
+                [
+                    "VI. Python Set Data Type",
+                    "1. Creating a Set",
+                    "2. No Duplicates Allowed",
+                    "3. Mixed Data Types",
+                    "4. Adding Elements",
+                    "5. Updating with Multiple Elements",
+                    "6. Removing Elements (discard)",
+                    "7. Removing Elements (remove)",
+                    "8. Set Union",
+                    "9. Set Intersection",
+                    "10. Set Difference",
+                    "11. Set Symmetric Difference",
+                    "12. Checking Membership",
+                    "13. Length of a Set"
+                ],
                 "VII. Python Dictionary Data Type"
             ],
             "description": [
@@ -272,12 +308,59 @@
                             "List comprehension provides a concise and elegant way to create a new list from an existing one with a single line of code. It's often more readable and faster than traditional `for` loops for simple operations."
                         ]
                     ]
+                ],
+                [
+                    "A Python **tuple** is **an ordered, immutable** collection of objects. Like a list, a tuple can hold various data types (integers, strings, etc.) and allows duplicate values. The key difference is its **immutability**: once a tuple is created, you cannot change, add, or remove its elements. Tuples are typically created using **parentheses** `()`. They are often used for data that should not change, such as coordinates or fixed configuration settings, and can be used as keys in a dictionary (since they are immutable).",
+                    "A tuple is created using parentheses `()`. It can store different data types together.",
+                    "Tuple elements are accessed using an index. Indexing starts from `0`.",
+                    "Tuples cannot be changed once created. Trying to modify them causes an error.",
+                    "Unpacking allows splitting tuple values into separate variables.",
+                    "Tuples can contain other tuples. Use multiple indices to access inner elements.",
+                    "A tuple with one element must have a comma, otherwise Python won't recognize it as a tuple.",
+                    "Tuples support repetition (`*`) and concatenation (`+`).",
+                    "Built-in functions: `len()` = length, `max()` = largest value, `min()` = smallest value, `count()` = occurrences."
+                ],
+                [
+                    "In Python, a string is a sequence of characters enclosed in quotes. It can include letters, numbers, symbols or spaces. Since Python has no separate character type, even a single character is treated as a string with length one. Strings are widely used for text handling and manipulation.",
+                    "A string is created using quotation marks (`\"` or `'`). Strings can hold letters, words, and symbols.",
+                    "Strings are sequences of characters. Indexing starts from 0, so `greeting[0]` returns the first character.",
+                    "Slicing extracts a part of the string. `greeting[6:14]` means characters starting at index 6 up to (but not including) index 14.",
+                    "Use `+` to join two or more strings together into one.",
+                    "The `len()` function counts the total number of characters (including spaces).",
+                    "Strings are immutable, meaning individual characters cannot be changed after creation. To modify, you must create a new string.",
+                    "Strings can be repeated using the `*` operator.",
+                    "The `in` keyword checks if a substring exists inside a string. It returns `True` if found, otherwise `False`.",
+                    "Strings have many built-in methods: `upper()` = uppercase, `capitalize()` = first letter uppercase, `replace()` = replace part of a string."
+                ],
+                [
+                    [
+                        "A Set in Python is an unordered collection of unique elements.",
+                        [
+                            "It does not allow duplicate values.",
+                            "The elements inside a set are immutable (cannot be changed), but the set itself is mutable (we can add or remove elements).",
+                            "Sets are useful when you need to store multiple values without worrying about duplicates, or when you want to perform mathematical operations like **union, intersection, and difference.**"
+                        ]
+                    ],
+                    "A set is created using curly braces `{}`. It stores **unique values** (no duplicates).",
+                    "Duplicate values are automatically removed in a set.",
+                    "A set can hold different data types, but only immutable ones (e.g., int, str, float).",
+                    "Use `.add()` method to add a single element.",
+                    "Use `.update()` method to add multiple elements at once.",
+                    "`.discard()` removes an element but does not raise an error if the element is missing.",
+                    "`.remove()` removes an element but raises an error if the element is missing.",
+                    "Union combines all elements from both sets (no duplicates).",
+                    "Intersection finds common elements in both sets.",
+                    "Difference keeps elements that are in the first set but not in the second.",
+                    "Symmetric difference keeps elements that are in either set but not both.",
+                    "Use `in` keyword to check if an element exists in a set.",
+                    "Use `len()` to count total elements in a set."
                 ]
             ]
         }
     },
     "comming_soon": {
         "title": "Coming Soon!",
-        "description": "We are working hard to bring you the best content possible. Stay tuned for updates!"
+        "description": "We are working hard to bring you the best content possible. Stay tuned for updates!",
+        "button": "Back to previouse page"
     }
 }

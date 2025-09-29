@@ -66,8 +66,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
             url: `/${lang}/python/function`,
           },
           {
-            title: dict.sidebar["python.exercise"],
-            url: `/${lang}/python/exercise`,
+            title: dict.sidebar["python.quiz"],
+            url: `/${lang}/python/quiz`,
           },
         ],
       },
