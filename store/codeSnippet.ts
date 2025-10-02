@@ -319,3 +319,102 @@ print(greeting.upper())  # Output: HELLO WORLD
 print(greeting.lower())  # Output: hello world
 print(greeting.title())  # Output: Hello World
 print(greeting.strip())  # Output: Hello World (removes leading/trailing spaces)`;
+
+
+// Python Set Data Type Example
+export const creatingSet = `my_set = {1, 2, 3, 4, 5}
+print(my_set)`;
+
+export const noDuplicateAllowOfSet = `my_set = {1, 2, 3, 4, 5, 5}
+print(my_set)`;
+
+export const mixedDataTypeSet = `my_set = {1, "Apple", 3.14, True}
+print(my_set)`;
+
+export const addingElementInSet = `my_set = {1, 2, 3, 4, 5}
+my_set.add(6)
+print(my_set)`;
+
+export const updateElementInSet = `my_set = {1, 2, 3, 4, 5}
+my_set.update([6, 7, 8])
+print(my_set)`;
+
+export const removeElementDiscardInSet = `my_set = {1, 2, 3, 4, 5}
+my_set.discard(3)
+print(my_set)`;
+
+export const removeElementRemoveInSet = `my_set = {1, 2, 3, 4, 5}
+my_set.remove(4)
+print(my_set)`;
+
+export const setUnion = `set1 = {1, 2, 3}
+set2 = {3, 4, 5} 
+print(set1 | set2)`;
+
+export const setIntersection = `set1 = {1, 2, 3}
+set2 = {3, 4, 5} 
+print(set1 & set2)`;
+
+export const setDifference = `set1 = {1, 2, 3}
+set2 = {3, 4, 5} 
+print(set1 - set2)`;
+
+export const setSymmetricDifference = `set1 = {1, 2, 3}
+set2 = {3, 4, 5} 
+print(set1 ^ set2)`;
+
+export const setCheckingMembership = `set1 = {1, 2, 3}
+set2 = {3, 4, 5} 
+print(3 in set1)
+print(6 not in set2)`;
+
+export const lengthOfSet = `set1 = {1, 2, 3}
+print(len(set1))`;
+
+// Python Dictionary Data Type Example
+export const creatingDictionary = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+print(my_dict)`;
+
+export const accessingDictionary = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+print(my_dict["name"])  # Output: Sok
+print(my_dict["age"])  # Output: 25
+print(my_dict["country"])  # Output: Cambodia`;
+
+export const addingNewKeyValuePair = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+my_dict["gender"] = "Male"
+print(my_dict)`;
+
+export const updateKeyValuePair = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+my_dict["age"] = 26
+print(my_dict)`;
+
+export const removeKeyValuePairPop = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+my_dict.pop("age")
+print(my_dict)`;
+
+export const removeLastInsertItem = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+my_dict.popitem()
+print(my_dict)`;
+
+export const checkKeyExist = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+print("name" in my_dict)  # Output: True
+print("gender" not in my_dict)  # Output: True`;
+
+export const loopDictionaryValues = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+for value in my_dict.values():
+    print(value)`;
+
+export const loopDictionaryKeys = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+for key in my_dict.keys():
+    print(key)`;
+
+export const loopDictionaryKeysAndValues = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+for key, value in my_dict.items():
+    print(key, value)`;
+  
+export const lengthDictionary = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+print(len(my_dict))`;
+
+export const nestedDictionary = `my_dict = {"name": "Sok", "age": 25, "country": "Cambodia"}
+my_dict["address"] = {"street": "123 Main St", "city": "Cambodia"}
+print(my_dict)`;
