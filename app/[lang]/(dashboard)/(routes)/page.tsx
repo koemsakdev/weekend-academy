@@ -51,10 +51,10 @@ export default function Home() {
                     <Section content={overview.description[5][1]} type="markdown"/>
                 </li>
                 <CodeSnippet
-                    isShell={true}
-                    showLineNumbers={false}
+                    isShell={false}
+                    showLineNumbers={true}
                     editorValue={singleComment}
-                    language="terminal"
+                    language="python"
                     mode="vs-dark"
                 />
                 <li className={"ml-5 mb-2 mt-2"}>
@@ -64,7 +64,7 @@ export default function Home() {
                     isShell={true}
                     showLineNumbers={false}
                     editorValue={multiComment}
-                    language="terminal"
+                    language="python"
                     mode="vs-dark"
                 />
             </ul>

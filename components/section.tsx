@@ -1,6 +1,8 @@
 "use client";
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 type ListItemProps = {
   content: string;
@@ -8,10 +10,16 @@ type ListItemProps = {
   downloadUrl?: string;
 };
 
-const ListItem = ({ content, isFirstItem = false, downloadUrl }: ListItemProps) => (
+const ListItem = ({
+  content,
+  isFirstItem = false,
+  downloadUrl,
+}: ListItemProps) => (
   <li>
     <div className="flex items-center gap-1.5">
-      <ReactMarkdown>{content}</ReactMarkdown>
+      <ReactMarkdown remarkPlugins={[remarkMath]} rehypePlugins={[rehypeKatex]}>
+        {content}
+      </ReactMarkdown>
       {isFirstItem && downloadUrl && (
         <a
           href={downloadUrl}
@@ -33,7 +41,12 @@ export type SectionProps = {
   downloadUrl?: string; // <- pass from parent
 };
 
-export const Section = ({ title, content, type = "markdown", downloadUrl }: SectionProps) => (
+export const Section = ({
+  title,
+  content,
+  type = "markdown",
+  downloadUrl,
+}: SectionProps) => (
   <div className="space-y-1.5">
     {title && <h2 className="text-xl font-semibold">{title}</h2>}
 

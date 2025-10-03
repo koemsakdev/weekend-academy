@@ -1,6 +1,6 @@
 {
     "sidebar": {
-        "title": "ការសិក្សាចុងសប្ដាហ៍",
+        "title": "មេរៀនណែនាំ",
         "version": "ជំនាន់ទី ១.០.០",
         "search_placeholder": "ស្វែងរក",
         "python": "Python",
@@ -467,7 +467,7 @@
                             "operator": "`**`",
                             "opertion": "ស្វ័យគុណ (Power)",
                             "example": "`5 ** 2 = 25`",
-                            "description": "ស្វ័យគុណ (5^2)"
+                            "description": "ស្វ័យគុណ ($5^2$)"
                         }
                     ],
                     [

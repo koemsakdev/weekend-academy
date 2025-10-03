@@ -1,5 +1,7 @@
 import React from "react";
 import ReactMarkdown from "react-markdown";
+import remarkMath from "remark-math";
+import rehypeKatex from "rehype-katex";
 
 interface TableRowProps {
   data: string[];
@@ -11,9 +13,14 @@ const TableRow = ({ data }: TableRowProps) => {
       {data.map((item, index) => (
         <td
           key={index}
-          className="px-6 py-2 whitespace-nowrap text-sm text-gray-900 dark:text-gray-300"
+          className="px-6 py-2 text-sm text-gray-900 dark:text-gray-300"
         >
-          <ReactMarkdown>{item}</ReactMarkdown>
+          <ReactMarkdown
+            remarkPlugins={[remarkMath]}
+            rehypePlugins={[rehypeKatex]}
+          >
+            {item}
+          </ReactMarkdown>
         </td>
       ))}
     </tr>
