@@ -691,5 +691,9 @@
         "title": "Coming Soon!",
         "description": "We are working hard to bring you the best content possible. Stay tuned for updates!",
         "button": "Back to previouse page"
+    },
+    "footer": {
+        "previouse": "Previouse",
+        "next": "Next"
     }
 }

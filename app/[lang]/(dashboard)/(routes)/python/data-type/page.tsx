@@ -906,11 +906,11 @@ const DataType = () => {
       <FooterSection
         prev={{
           url: `variable`,
-          title: "Variable",
+          title: dict.footer["previouse"] + " - " + dict.sidebar["python.variable"],
         }}
         next={{
           url: `operator`,
-          title: "Operator",
+          title: dict.footer["next"] + " - " + dict.sidebar["python.operator"],
         }}
       />
     </div>

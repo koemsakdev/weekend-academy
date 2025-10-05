@@ -72,11 +72,11 @@ export default function Home() {
             <FooterSection
                 prev={{
                     url: `/`,
-                    title: "Previous",
+                    title: dict.footer["previouse"],
                 }}
                 next={{
                     url: `${lang}/python/variable`,
-                    title: "Variable",
+                    title: dict.footer["next"] + " - " + dict.sidebar["python.variable"],
                 }}
             />
         </div>

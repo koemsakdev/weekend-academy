@@ -67,11 +67,11 @@ const Course = () => {
             <FooterSection
                 prev={{
                     url: `/${lang}`,
-                    title: "Overview",
+                    title: dict.footer["previouse"] + " - " + dict.sidebar["python.overview"],
                 }}
                 next={{
                     url: `data-type`,
-                    title: "Data Type",
+                    title: dict.footer["next"] + " - " + dict.sidebar["python.data-type"],
                 }}
             />
         </div>

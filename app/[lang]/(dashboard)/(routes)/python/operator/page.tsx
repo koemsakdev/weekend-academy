@@ -289,15 +289,17 @@ const OperatorPage = () => {
       <Section content={operator.description[7][3][6]} />
 
       <FooterSection
-              prev={{
-                url: `data-type`,
-                title: "Data Type",
-              }}
-              next={{
-                url: `input-output`,
-                title: "Input & Output",
-              }}
-            />
+        prev={{
+          url: `data-type`,
+          title:
+            dict.footer["previouse"] + " - " + dict.sidebar["python.data-type"],
+        }}
+        next={{
+          url: `input-output`,
+          title:
+            dict.footer["next"] + " - " + dict.sidebar["python.input-output"],
+        }}
+      />
     </div>
   );
 };
