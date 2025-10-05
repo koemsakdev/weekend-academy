@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client"; // MUST be here
 import { createContext, useContext } from "react";
 import { Locale } from "@/i18n-config";

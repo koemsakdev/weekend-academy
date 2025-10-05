@@ -1,7 +1,6 @@
 import Link from "next/link";
 import {ChevronLeft, ChevronRight} from "lucide-react";
 import {Button} from "@/components/ui/button";
-import {cn} from "@/lib/utils";
 
 type NavigationLink = {
     url: string;
