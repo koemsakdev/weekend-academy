@@ -16,8 +16,10 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar";
 import LanguageButton from "@/components/language-button";
+import { useDictionary } from "@/lib/dictionary-context";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
+  const { lang } = useDictionary();
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -31,7 +33,7 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           <Breadcrumb>
             <BreadcrumbList>
               <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="/">
+                <BreadcrumbLink href={`/${lang}`}>
                   Python
                 </BreadcrumbLink>
               </BreadcrumbItem>
