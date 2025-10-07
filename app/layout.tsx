@@ -3,7 +3,8 @@ import React from "react";
 import { Toaster } from "sonner";
 import "katex/dist/katex.min.css";
 import type { Metadata } from "next";
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title:
@@ -62,6 +63,7 @@ export default function RootLayout({
         {children}
         <Toaster />
         <SpeedInsights />
+        <Analytics />
       </body>
     </html>
   );
