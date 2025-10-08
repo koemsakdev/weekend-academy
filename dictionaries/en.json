@@ -135,7 +135,8 @@
                     "10. Looping through Key-Value Pairs",
                     "11. Dictionary Length",
                     "12. Nested Dictionary"
-                ]
+                ],
+                "Welcome to Python Data Types"
             ],
             "description": [
                 [
@@ -392,7 +393,8 @@
                     "Iterates through both keys and values together.",
                     "Use `len()` to count total key-value pairs.",
                     "A dictionary can contain another dictionary (nested structure)."
-                ]
+                ],
+                "In Python, every piece of information you work with is an object, and every object has a data type. The **data type** tells the computer what kind of information it is (like a number, text, or a true/false value) and what you can do with it. Understanding data types is the fundamental first step in programming, as it dictates how data is stored in memory and how operations (like addition or combining text) will behave. Python handles many data types automatically, which makes coding easier. Below are the data type that we are going to explore more. Please click below data type to get more knowledges."
             ]
         },
         "python.operator": {

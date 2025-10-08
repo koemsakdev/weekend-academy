@@ -63,6 +63,7 @@ import {
 } from "@/store/codeSnippet";
 import Table from "@/components/table";
 import FooterSection from "@/components/footer-section";
+import { AcademyCard } from "@/components/academy-card";
 
 const headers: string[] = ["Data Type", "Classes", "Description"];
 interface Row {
@@ -77,6 +78,17 @@ const DataType = () => {
   const rows: Row[] = dataType.description[0][2];
   return (
     <div className="w-full h-full flex flex-col gap-3">
+      <h1 className="text-xl md:text-3xl font-bold">{dataType.title[7]}</h1>
+      <Section content={dataType.description[7]} />
+
+      <AcademyCard
+        title="Python Data Types"
+        description={dataType.description[7]}
+        badgeText="focus"
+        badgeVariant="outline"
+      />
+
+
       <Section title={dataType.title[0]} content={dataType.description[0][0]} />
       <CodeSnippet
         isShell={false}
