@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { usePathname, useRouter } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { type Locale } from "@/i18n-config";
 import {
   Select,
@@ -20,6 +20,7 @@ const languageFlags = {
 export default function LanguageButton() {
   const router = useRouter();
   const pathname = usePathname();
+  const searchParams = useSearchParams();
 
   const [language, setLanguage] = useState<Locale>("km");
 
@@ -37,7 +38,9 @@ export default function LanguageButton() {
     if (!pathname) return "/";
     const segments = pathname.split("/");
     segments[1] = locale;
-    return segments.join("/") || "/";
+    const newPath = segments.join("/");
+    const params = searchParams.toString();
+    return params ? `${newPath}?${params}` : newPath;
   };
 
   const handleChange = (value: string) => {

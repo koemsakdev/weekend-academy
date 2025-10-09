@@ -71,10 +71,10 @@
         },
         "python.data-type": {
             "title": [
-                "I. Python Data Types",
-                "II. Python Numeric Data type",
+                "Python Data Types",
+                "Python Numeric Data type",
                 [
-                    "III. Python List Data Type",
+                    "Python List Data Type",
                     "Creating a List",
                     "Accessing List Items",
                     "Change List Items",
@@ -83,7 +83,7 @@
                     "Loop Lists"
                 ],
                 [
-                    "IV. Python Tuple Data Type",
+                    "Python Tuple Data Type",
                     "1. Creating a Tuple",
                     "2. Accessing Elements",
                     "3. Immutability",
@@ -94,7 +94,7 @@
                     "8. Tuple Functions"
                 ],
                 [
-                    "V. Python String Data Type",
+                    "Python String Data Type",
                     "1. Creating a String",
                     "2. Accessing by Index",
                     "3. Slicing (Substring)",
@@ -106,7 +106,7 @@
                     "9. String Functions"
                 ],
                 [
-                    "VI. Python Set Data Type",
+                    "Python Set Data Type",
                     "1. Creating a Set",
                     "2. No Duplicates Allowed",
                     "3. Mixed Data Types",
@@ -122,7 +122,7 @@
                     "13. Length of a Set"
                 ],
                 [
-                    "VII. Python Dictionary Data Type",
+                    "Python Dictionary Data Type",
                     "1. Creating a Dictionary",
                     "2. Accessing Value by Key",
                     "3. Adding a New Key-Value Pair",
@@ -399,37 +399,44 @@
                     {
                         "title": "Python Data Types",
                         "description": "Categories that classify different kinds of data (e.g., numbers, text, or Boolean values) that can be stored and manipulated in a Python program.",
-                        "badgeText": "FOUNDATION"
+                        "badgeText": "FOUNDATION",
+                        "param": "?type=data-type"
                     },
                     {
                         "title": "Python Numeric Data Type",
                         "description": "Represents whole numbers (**int**), floating-point numbers (**float**), and complex numbers (**complex**).",
-                        "badgeText": "FUNDAMENTAL"
+                        "badgeText": "FUNDAMENTAL",
+                        "param": "?type=data-type-numeric"
                     },
                     {
                         "title": "Python List Data Type",
                         "description": "An **ordered**, **mutable** (changeable) collection of items, enclosed in **square brackets** (`[]`). Items can be of different data types.",
-                        "badgeText": "CRITICAL FOCUS"
+                        "badgeText": "CRITICAL FOCUS",
+                        "param": "?type=data-type-list"
                     },
                     {
                         "title": "Python Tuple Data Type",
                         "description": "An **ordered**, **immutable** (unchangeable) collection of items, enclosed in **parentheses** (`()`). Often used for fixed collections of items.",
-                        "badgeText": "IMPORTANT"
+                        "badgeText": "IMPORTANT",
+                        "param": "?type=data-type-tuple"
                     },
                     {
                         "title": "Python String Data Type",
                         "description": "A sequence of **Unicode characters** (text) enclosed in **single quotes** (`'...'`) or **double quotes** (`\"...\"`). Strings are **immutable**.",
-                        "badgeText": "CRITICAL FOCUS"
+                        "badgeText": "CRITICAL FOCUS",
+                        "param": "?type=data-type-string"
                     },
                     {
                         "title": "Python Set Data Type",
                         "description": "An **unordered** collection of **unique** (non-duplicate) items, enclosed in **curly braces** (`{}`). Sets are **mutable** but their elements must be **immutable**.",
-                        "badgeText": "ADVANCED USE"
+                        "badgeText": "ADVANCED USE",
+                        "param": "?type=data-type-set"
                     },
                     {
                         "title": "Python Dictionary Data Type",
                         "description": "An **unordered** collection of **key-value pairs**, enclosed in **curly braces** (`{}`). Keys must be **unique** and **immutable**.",
-                        "badgeText": "CRITICAL FOCUS"
+                        "badgeText": "CRITICAL FOCUS",
+                        "param": "?type=data-type-dictionary"
                     }
                 ]
             ]

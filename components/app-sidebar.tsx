@@ -34,7 +34,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     navMain: [
       {
         title: dict.sidebar.python,
-        url: `/${lang}`,
+        url: `/${lang}/python`,
         items: [
           {
             title: dict.sidebar["python.overview"],
@@ -141,7 +141,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   };
 
   const computeIsActive = (itemUrl: string) => {
-    return pathname.endsWith(itemUrl.split("/").pop() || "");
+    return pathname.endsWith(itemUrl.split("/").pop() || "/python");
   };
   return (
     <Sidebar {...props}>
@@ -149,7 +149,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <Link href={`/${lang}`}>
+              <Link href={`/${lang}/python`}>
                 <div className="bg-blue-100 text-blue-500 flex aspect-square size-8 items-center justify-center rounded-lg">
                   <GraduationCap className="size-6" />
                 </div>
