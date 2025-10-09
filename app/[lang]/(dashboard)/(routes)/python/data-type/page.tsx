@@ -72,21 +72,35 @@ interface Row {
   description: string;
 }
 
+interface cardListInterface {
+  title: string;
+  description: string;
+  badgeText?: string;
+}
+
 const DataType = () => {
   const { dict } = useDictionary();
   const dataType = dict.contents["python.data-type"];
   const rows: Row[] = dataType.description[0][2];
+
+  const cardList = dataType.description[8];
+
   return (
     <div className="w-full h-full flex flex-col gap-3">
       <h1 className="text-xl md:text-3xl font-bold">{dataType.title[7]}</h1>
       <Section content={dataType.description[7]} />
 
-      <AcademyCard
-        title="Python Data Types"
-        description={dataType.description[7]}
-        badgeText="focus"
-        badgeVariant="outline"
-      />
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 my-4">
+        {cardList.map((card: cardListInterface, index: number) => (
+          <AcademyCard
+            key={index}
+            title={card.title}
+            description={card.description}
+            badgeText={card.badgeText}
+            badgeVariant="outline"
+          />
+        ))}
+      </div>
 
 
       <Section title={dataType.title[0]} content={dataType.description[0][0]} />

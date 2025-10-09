@@ -394,7 +394,44 @@
                     "Use `len()` to count total key-value pairs.",
                     "A dictionary can contain another dictionary (nested structure)."
                 ],
-                "In Python, every piece of information you work with is an object, and every object has a data type. The **data type** tells the computer what kind of information it is (like a number, text, or a true/false value) and what you can do with it. Understanding data types is the fundamental first step in programming, as it dictates how data is stored in memory and how operations (like addition or combining text) will behave. Python handles many data types automatically, which makes coding easier. Below are the data type that we are going to explore more. Please click below data type to get more knowledges."
+                "In Python, every piece of information you work with is an object, and every object has a data type. The **data type** tells the computer what kind of information it is (like a number, text, or a true/false value) and what you can do with it. Understanding data types is the fundamental first step in programming, as it dictates how data is stored in memory and how operations (like addition or combining text) will behave. Python handles many data types automatically, which makes coding easier. Below are the data type that we are going to explore more. Please click below data type to get more knowledges.",
+                [
+                    {
+                        "title": "Python Data Types",
+                        "description": "Categories that classify different kinds of data (e.g., numbers, text, or Boolean values) that can be stored and manipulated in a Python program.",
+                        "badgeText": "FOUNDATION"
+                    },
+                    {
+                        "title": "Python Numeric Data Type",
+                        "description": "Represents whole numbers (**int**), floating-point numbers (**float**), and complex numbers (**complex**).",
+                        "badgeText": "FUNDAMENTAL"
+                    },
+                    {
+                        "title": "Python List Data Type",
+                        "description": "An **ordered**, **mutable** (changeable) collection of items, enclosed in **square brackets** (`[]`). Items can be of different data types.",
+                        "badgeText": "CRITICAL FOCUS"
+                    },
+                    {
+                        "title": "Python Tuple Data Type",
+                        "description": "An **ordered**, **immutable** (unchangeable) collection of items, enclosed in **parentheses** (`()`). Often used for fixed collections of items.",
+                        "badgeText": "IMPORTANT"
+                    },
+                    {
+                        "title": "Python String Data Type",
+                        "description": "A sequence of **Unicode characters** (text) enclosed in **single quotes** (`'...'`) or **double quotes** (`\"...\"`). Strings are **immutable**.",
+                        "badgeText": "CRITICAL FOCUS"
+                    },
+                    {
+                        "title": "Python Set Data Type",
+                        "description": "An **unordered** collection of **unique** (non-duplicate) items, enclosed in **curly braces** (`{}`). Sets are **mutable** but their elements must be **immutable**.",
+                        "badgeText": "ADVANCED USE"
+                    },
+                    {
+                        "title": "Python Dictionary Data Type",
+                        "description": "An **unordered** collection of **key-value pairs**, enclosed in **curly braces** (`{}`). Keys must be **unique** and **immutable**.",
+                        "badgeText": "CRITICAL FOCUS"
+                    }
+                ]
             ]
         },
         "python.operator": {
