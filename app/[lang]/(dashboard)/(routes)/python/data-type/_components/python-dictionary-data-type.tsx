@@ -1,4 +1,5 @@
 import CodeSnippet from "@/components/code-snippet";
+import FooterSection from "@/components/footer-section";
 import { Section } from "@/components/section";
 import { useDictionary } from "@/lib/dictionary-context";
 import {
@@ -20,14 +21,14 @@ export const PythonDictionaryDataTypes = () => {
   const { dict } = useDictionary();
   const dataType = dict.contents["python.data-type"];
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {/* Dictionary Data Type */}
       <Section
         title={dataType.title[6][0]}
         content={dataType.description[6][0][0]}
       />
       <Section content={dataType.description[6][0][1]} type="list" />
-      <div className="ml-8 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         {/* Create Dictionary Data Type*/}
         <div className="flex flex-col gap-2">
           <Section
@@ -208,6 +209,17 @@ export const PythonDictionaryDataTypes = () => {
           />
         </div>
       </div>
+
+      <FooterSection
+        prev={{
+          url: `data-type?type=data-type-set`,
+          title: dict.footer["previouse"],
+        }}
+        next={{
+          url: `operator`,
+          title: dict.footer["next"] + " - " + dict.sidebar["python.operator"],
+        }}
+      />
     </div>
   );
 };

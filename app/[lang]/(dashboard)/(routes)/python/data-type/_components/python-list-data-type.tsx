@@ -14,12 +14,13 @@ import {
   pythonCreatingListUsingStar,
   pythonListDataType,
 } from "@/store/codeSnippet";
+import FooterSection from "@/components/footer-section";
 
 export const PythonListDataTypes = () => {
   const { dict } = useDictionary();
   const dataType = dict.contents["python.data-type"];
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {/* Python List Data Type */}
       <Section
         title={dataType.title[2][0]}
@@ -28,7 +29,7 @@ export const PythonListDataTypes = () => {
       <Section content={dataType.description[2][0][1]} type="list" />
 
       {/* List Data Type */}
-      <div className="ml-8 flex flex-col gap-2">
+      <div className="flex flex-col gap-2">
         <CodeSnippet
           isShell={false}
           showLineNumbers={true}
@@ -42,7 +43,7 @@ export const PythonListDataTypes = () => {
           title={dataType.title[2][1]}
           content={dataType.description[2][1][0]}
         />
-        <div className="p-4 border-2 border-blue-300 rounded-md shadow-md mb-4">
+        <div className="p-4 rounded-sm border-t-2 shadow-md mb-4">
           <Section content={dataType.description[2][1][1][0]} />
           <Section content={dataType.description[2][1][1][1]} />
           <Section content={dataType.description[2][1][1][2]} />
@@ -82,7 +83,7 @@ export const PythonListDataTypes = () => {
           title={dataType.title[2][2]}
           content={dataType.description[2][2][0]}
         />
-        <div className="p-4 border-2 border-blue-300 rounded-md shadow-md mb-4">
+        <div className="p-4 rounded-sm border-t-2 shadow-md mb-4">
           <Section content={dataType.description[2][2][1][0]} />
           <Section content={dataType.description[2][2][1][1]} />
           <CodeSnippet
@@ -154,6 +155,17 @@ export const PythonListDataTypes = () => {
           />
         </div>
       </div>
+
+      <FooterSection
+        prev={{
+          url: `data-type?type=data-type-numeric`,
+          title: dict.footer["previouse"],
+        }}
+        next={{
+          url: `data-type?type=data-type-tuple`,
+          title: dict.footer["next"],
+        }}
+      />
     </div>
   );
 };

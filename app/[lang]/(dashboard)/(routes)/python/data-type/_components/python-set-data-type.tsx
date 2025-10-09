@@ -1,20 +1,35 @@
 import CodeSnippet from "@/components/code-snippet";
+import FooterSection from "@/components/footer-section";
 import { Section } from "@/components/section";
 import { useDictionary } from "@/lib/dictionary-context";
-import { addingElementInSet, creatingSet, lengthOfSet, mixedDataTypeSet, noDuplicateAllowOfSet, removeElementDiscardInSet, removeElementRemoveInSet, setCheckingMembership, setDifference, setIntersection, setSymmetricDifference, setUnion, updateElementInSet } from "@/store/codeSnippet";
+import {
+  addingElementInSet,
+  creatingSet,
+  lengthOfSet,
+  mixedDataTypeSet,
+  noDuplicateAllowOfSet,
+  removeElementDiscardInSet,
+  removeElementRemoveInSet,
+  setCheckingMembership,
+  setDifference,
+  setIntersection,
+  setSymmetricDifference,
+  setUnion,
+  updateElementInSet,
+} from "@/store/codeSnippet";
 
 export const PythonSetDataTypes = () => {
   const { dict } = useDictionary();
   const dataType = dict.contents["python.data-type"];
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {/* Set Data Type */}
       <Section
         title={dataType.title[5][0]}
         content={dataType.description[5][0][0]}
       />
       <Section content={dataType.description[5][0][1]} type="list" />
-      <div className="ml-8 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         {/* Create Set Data type */}
         <div className="flex flex-col gap-2">
           <Section
@@ -209,6 +224,16 @@ export const PythonSetDataTypes = () => {
           />
         </div>
       </div>
+      <FooterSection
+        prev={{
+          url: `data-type?type=data-type-string`,
+          title: dict.footer["previouse"],
+        }}
+        next={{
+          url: `data-type?type=data-type-dictionary`,
+          title: dict.footer["next"],
+        }}
+      />
     </div>
   );
 };

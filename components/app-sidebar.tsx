@@ -38,7 +38,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         items: [
           {
             title: dict.sidebar["python.overview"],
-            url: `/${lang}`,
+            url: `/${lang}/python`,
           },
           {
             title: dict.sidebar["python.variable"],

@@ -59,12 +59,13 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           />
           <Breadcrumb>
             <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href={`/${lang}`}>Home</BreadcrumbLink>
-              </BreadcrumbItem>
+              {/* <BreadcrumbItem className="hidden md:block">
+                <BreadcrumbLink href={`/${lang}/python`}>Python</BreadcrumbLink>
+              </BreadcrumbItem> */}
               {breadcrumbs.map((item, index) => (
                 <React.Fragment key={index}>
-                  <BreadcrumbSeparator className="hidden md:block" />
+                  {index > 0 && <BreadcrumbSeparator className="hidden md:block" />}
+                  {/* <BreadcrumbSeparator className="hidden md:block" /> */}
                   <BreadcrumbItem key={item.href}>
                     {index === breadcrumbs.length - 1 ? (
                       <BreadcrumbPage>{item.title}</BreadcrumbPage>

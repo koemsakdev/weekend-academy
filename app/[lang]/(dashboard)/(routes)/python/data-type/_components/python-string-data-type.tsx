@@ -1,18 +1,29 @@
 import { Section } from "@/components/section";
 import CodeSnippet from "@/components/code-snippet";
 import { useDictionary } from "@/lib/dictionary-context";
-import { accessingString, concatenationString, creatingString, immutabilityString, lengthString, membershipTestString, repetitionString, slicingString, stringFunction } from "@/store/codeSnippet";
+import {
+  accessingString,
+  concatenationString,
+  creatingString,
+  immutabilityString,
+  lengthString,
+  membershipTestString,
+  repetitionString,
+  slicingString,
+  stringFunction,
+} from "@/store/codeSnippet";
+import FooterSection from "@/components/footer-section";
 
 export const PythonStringDataTypes = () => {
   const { dict } = useDictionary();
   const dataType = dict.contents["python.data-type"];
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       <Section
         title={dataType.title[4][0]}
         content={dataType.description[4][0]}
       />
-      <div className="ml-8 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <Section
             title={dataType.title[4][1]}
@@ -139,6 +150,16 @@ export const PythonStringDataTypes = () => {
           />
         </div>
       </div>
+      <FooterSection
+        prev={{
+          url: `data-type?type=data-type-tuple`,
+          title: dict.footer["previouse"],
+        }}
+        next={{
+          url: `data-type?type=data-type-set`,
+          title: dict.footer["next"],
+        }}
+      />
     </div>
   );
 };

@@ -11,18 +11,19 @@ import {
   tupleWithOneElement,
   unpackingTuple,
 } from "@/store/codeSnippet";
+import FooterSection from "@/components/footer-section";
 
 export const PythonTupleDataTypes = () => {
   const { dict } = useDictionary();
   const dataType = dict.contents["python.data-type"];
   return (
-    <div>
+    <div className="flex flex-col gap-4">
       {/* Tuple Data Type */}
       <Section
         title={dataType.title[3][0]}
         content={dataType.description[3][0]}
       />
-      <div className="ml-8 flex flex-col gap-4">
+      <div className="flex flex-col gap-4">
         <div className="flex flex-col gap-2">
           <Section
             title={dataType.title[3][1]}
@@ -135,6 +136,16 @@ export const PythonTupleDataTypes = () => {
           />
         </div>
       </div>
+      <FooterSection
+        prev={{
+          url: `data-type?type=data-type-list`,
+          title: dict.footer["previouse"],
+        }}
+        next={{
+          url: `data-type?type=data-type-string`,
+          title: dict.footer["next"],
+        }}
+      />
     </div>
   );
 };
