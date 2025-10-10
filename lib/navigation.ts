@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const getNavMain = (lang: string, dict: any) => [
     {
         title: dict.sidebar.python,
