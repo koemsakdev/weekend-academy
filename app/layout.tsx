@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     title: "Learning Tutorial | Learn Python Online Free",
     description:
       "Start your coding journey with Python! Interactive tutorials, code playground, and beginner-friendly lessons. Future updates will include HTML, CSS, JavaScript, and PHP guides.",
-    url: "https://your-website-domain.com",
+    url: "https://online-torturial.vercel.app",
     siteName: "Learning Tutorial",
     images: [
       {
-        url: "https://your-website-domain.com/og-image.jpg",
+        url: "https://online-torturial.vercel.app/og-image.jpg",
         width: 1200,
         height: 630,
         alt: "Learning Tutorial - Learn Python Online",
@@ -46,10 +46,10 @@ export const metadata: Metadata = {
     title: "Learning Tutorial | Python Programming Made Easy",
     description:
       "Free Python tutorials for beginners and future web developers. Practice live coding and build your programming foundation.",
-    images: ["https://your-website-domain.com/og-image.jpg"],
+    images: ["https://online-torturial.vercel.app/og-image.jpg"],
     creator: "@your_twitter_handle",
   },
-  metadataBase: new URL("https://your-website-domain.com"),
+  metadataBase: new URL("https://online-torturial.vercel.app"),
 };
 
 export default function RootLayout({

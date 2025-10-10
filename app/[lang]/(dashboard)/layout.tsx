@@ -5,10 +5,8 @@ import { AppSidebar } from "@/components/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
-  BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbPage,
-  BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -19,34 +17,31 @@ import {
 import LanguageButton from "@/components/language-button";
 import { useDictionary } from "@/lib/dictionary-context";
 import { usePathname } from "next/navigation";
+import { getNavMain } from "@/lib/navigation";
 
 const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
-  const { lang } = useDictionary();
+  const { lang, dict } = useDictionary();
   const pathname = usePathname();
 
-  const breadcrumbs = useMemo(() => {
-    const pathSegments = pathname
-      .split("/")
-      .filter(
-        (segment) =>
-          segment &&
-          segment !== lang &&
-          segment !== "(dashboard)" &&
-          segment !== "(routes)"
-      );
+  const pageTitle = useMemo(() => {
+    const navMain = getNavMain(lang, dict);
+    const currentItem = navMain
+      .flatMap((main) => main.items || [])
+      .find((item) => item.url === pathname);
 
-    const items = pathSegments.map((segment, index) => {
-      const href =
-        "/" + lang + "/" + pathSegments.slice(0, index + 1).join("/");
-      const title = segment
-        .split("-")
-        .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(" ");
-      return { href, title };
-    });
+    if (currentItem) {
+      return currentItem.title;
+    }
 
-    return items;
-  }, [pathname, lang]);
+    const pathSegments = pathname.split("/").filter(Boolean);
+    if (pathSegments.length < 2) return "";
+
+    const lastSegment = pathSegments[pathSegments.length - 1];
+    return lastSegment
+      .split("-")
+      .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+  }, [pathname, lang, dict]);
   return (
     <SidebarProvider>
       <AppSidebar />
@@ -59,24 +54,9 @@ const DashboardLayout = ({ children }: { children: React.ReactNode }) => {
           />
           <Breadcrumb>
             <BreadcrumbList>
-              {/* <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href={`/${lang}/python`}>Python</BreadcrumbLink>
-              </BreadcrumbItem> */}
-              {breadcrumbs.map((item, index) => (
-                <React.Fragment key={index}>
-                  {index > 0 && <BreadcrumbSeparator className="hidden md:block" />}
-                  {/* <BreadcrumbSeparator className="hidden md:block" /> */}
-                  <BreadcrumbItem key={item.href}>
-                    {index === breadcrumbs.length - 1 ? (
-                      <BreadcrumbPage>{item.title}</BreadcrumbPage>
-                    ) : (
-                      <BreadcrumbLink href={item.href}>
-                        {item.title}
-                      </BreadcrumbLink>
-                    )}
-                  </BreadcrumbItem>
-                </React.Fragment>
-              ))}
+              <BreadcrumbItem>
+                <BreadcrumbPage>{pageTitle}</BreadcrumbPage>
+              </BreadcrumbItem>
             </BreadcrumbList>
           </Breadcrumb>
 

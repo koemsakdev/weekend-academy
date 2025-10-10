@@ -28,14 +28,14 @@ const DataType = () => {
   const type = searchParams.get("type");
 
   return (
-    <div className="w-full h-full flex flex-col gap-3">
+    <div className="w-full h-full flex flex-col gap-4">
       {type === null ? (
         <div>
           <h1 className="text-xl md:text-3xl font-bold">{dataType.title[7]}</h1>
           <Section content={dataType.description[7]} />
 
           <Separator className="my-4" />
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {cardList.map((card: cardListInterface, index: number) => (
               <AcademyCard
                 key={index}

@@ -85,11 +85,24 @@ export default function CodeSnippet({
   const mounted = useMounted();
 
   useEffect(() => {
-    setTheme(mode);
-    if (localEditor) {
-      localEditor.setValue(editorValue);
-      setAutoHeight(localEditor.getContentHeight().toString());
+    if (!localEditor) {
+      return;
     }
+
+    setTheme(mode);
+    localEditor.setValue(editorValue);
+
+    const updateHeight = () => {
+      const contentHeight = localEditor.getContentHeight();
+      setAutoHeight(contentHeight.toString());
+    };
+
+    const disposable = localEditor.onDidContentSizeChange(updateHeight);
+    updateHeight();
+
+    return () => {
+      disposable.dispose();
+    };
   }, [mode, localEditor, editorValue, setTheme]);
 
   const copyCode = async () => {
@@ -159,7 +172,7 @@ export default function CodeSnippet({
   const handleCloseOutput = () => {
     setOutput("");
     setError("");
-  }
+  };
 
   if (!mounted) return null;
 
@@ -239,6 +252,7 @@ export default function CodeSnippet({
                 domReadOnly: true,
                 overviewRulerLanes: 0,
                 lineNumbers: showLineNumbers ? "on" : "off",
+                wordWrap: "on",
                 selectionHighlight: false,
                 occurrencesHighlight: "off",
                 minimap: { enabled: false },
@@ -294,9 +308,7 @@ export default function CodeSnippet({
                 <IconButton
                   onClick={handleCloseOutput}
                   boxShadow="0 0 10px red"
-                  icon={
-                      <X className="size-3.5 text-red-500" />
-                  }
+                  icon={<X className="size-3.5 text-red-500" />}
                   color={isOutputCopied ? "text-red-300" : "text-red-500"}
                 />
               </div>
